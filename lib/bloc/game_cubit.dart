@@ -8,28 +8,28 @@ class GameCubit extends Cubit<List<String>> {
 
   final Map<String, List<String>> games = {
     "milk": [
-      "https://cdn.britannica.com/55/174255-050-526314B6/brown-Guernsey-cow.jpg",
-      "https://cdn.britannica.com/77/200377-050-4326767F/milk-splashing-glass.jpg",
-      "https://cdn.britannica.com/33/166933-050-1475B953/Stick-butter.jpg",
-      "https://www.indooroutdoors.co.uk/cdn/shop/products/4_5108b67f-e8b2-4c75-8d07-78719ab731ff.jpg?v=1696243244",
+      "asset/cow.png",
+      "asset/milk.png",
+      "asset/butter.png",
+      "asset/goat.png",
     ],
     "cake": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnfTXs9DpaPffvPTpjsS2XrGmEqiS1PebKA&s",
-      "https://handletheheat.com/wp-content/uploads/2015/03/Best-Birthday-Cake-with-milk-chocolate-buttercream-SQUARE.jpg",
-      "https://www.recipegirl.com/wp-content/uploads/2015/01/Kit-Kat-Cake-1-500x500.jpg",
-      "https://cakebycourtney.com/wp-content/uploads/2015/08/Cookies-and-Cream-Cake-4-500x375.jpg",
+      "asset/cake.png",
+      "asset/birthday_cake.png",
+      "asset/kit_kat_cake.png",
+      "asset/cookies_cake.png",
     ],
     "tree": [
-      "https://www.adobe.com/content/dam/cc/us/en/creativecloud/illustration-adobe-illustration/how-to-draw-trees/draw-trees_fb-img_1200x800.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8q11Gdj6ljM4WX5RUCdwiXhCFvbOm3ZgNbQ&s",
-      "https://static.vecteezy.com/system/resources/thumbnails/008/132/083/small_2x/green-tree-cartoon-isolated-on-white-background-illustration-of-green-tree-cartoon-free-vector.jpg",
-      "https://static.vecteezy.com/system/resources/previews/022/432/338/non_2x/green-tree-with-leaves-outline-illustration-plant-in-garden-vector.jpg",
+      "assset/tree.png",
+      "asset/new_year_tree.png",
+      "asset/big_tree.png",
+      "asset/little_tree.png",
     ],
     "book": [
-      "https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFhtziUi-Hm8BPQx0vCwFhwwXRhktkfdpVDA&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjtO-VZ__nzfsmZ_EvGHLGynXQaJvkb8ZJ3g&s",
-      "https://m.media-amazon.com/images/I/612BYerla-L._AC_UF1000,1000_QL80_.jpg",
+      "asset/red_book.png",
+      "asset/love_book.png",
+      "asset/library.png",
+      "fairy_tale.png",
     ],
   };
 
@@ -64,7 +64,10 @@ class GameCubit extends Cubit<List<String>> {
   List<String> _shuffleLetters(String answer) {
     final random = Random();
     final letters = answer.split('');
-    final extraLetters = List.generate(4, (_) => String.fromCharCode(random.nextInt(26) + 97)); // Adding extra random letters
+    final extraLetters = List.generate(
+        4,
+        (_) => String.fromCharCode(
+            random.nextInt(26) + 97)); // Adding extra random letters
     letters.addAll(extraLetters);
     letters.shuffle();
     return letters;

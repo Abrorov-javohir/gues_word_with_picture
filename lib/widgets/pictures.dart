@@ -15,7 +15,7 @@ class Pictures extends StatelessWidget {
       ),
       itemCount: images.length,
       itemBuilder: (context, index) {
-        return Image.network(images[index], fit: BoxFit.cover);
+        return Image.asset(images[index], fit: BoxFit.cover);
       },
     );
   }
